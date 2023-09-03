@@ -1,13 +1,24 @@
 import { useContext, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import { ButtonContext } from "./BtContext";
+import Navbar from "./components/Layout/Navbar";
+import Footer from "./components/Footer";
+import {
+  Route,
+  Router,
+  RouterProvider,
+  Routes,
+  createBrowserRouter,
+  createRoutesFromElements,
+} from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/pages/login";
+import Logout from "./components/pages/Logout";
 
-function App() {
+export const AppComp = () => {
   // const [count, setCount] = useState(0);
   const { btw, setBtw } = useContext(ButtonContext);
-
   return (
     <>
       <div>
@@ -22,6 +33,32 @@ function App() {
         </a>
       </div>
     </>
+  );
+};
+
+function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "login",
+      element: <Login/>,
+    },
+    {
+      path:"logout",
+      element:<Logout/>,
+    },
+  ]);
+
+  return (
+    <div className="App">
+      <Navbar />
+      <RouterProvider router={router} />
+      {/* <AppComp /> */}
+      {/* <Footer /> */}
+    </div>
   );
 }
 
