@@ -15,6 +15,21 @@
   }
 } */
 
+.logo {
+  height: 9em;
+  width: 9em;
+  padding: 0.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #222477);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #274988aa);
+}
+
+
 nav {
   background-color: rgb(39, 54, 75);
   padding: 0.5rem;
@@ -25,10 +40,3 @@ nav {
   color: aliceblue;
 }
 
-.footer {
-  padding: 0.5rem;
-  background-color: rgb(39, 54, 75);
-  text-align: center;
-  margin-bottom: auto;
-  place-items: end;
-}

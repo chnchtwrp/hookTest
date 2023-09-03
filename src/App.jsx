@@ -44,11 +44,12 @@ function App() {
     },
     {
       path: "login",
-      element: <Login/>,
+      element: <Login />,
     },
+
     {
-      path:"logout",
-      element:<Logout/>,
+      path: "logout",
+      element: <Logout />,
     },
   ]);
 
